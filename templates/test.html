@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSE Client</title>
+</head>
+<body>
+  <h1>SSE Client</h1>
+  <div id="events"></div>
+  <script>
+    const eventSource = new EventSource('/events');
+
+    eventSource.onmessage = function(event) {
+      const newElement = document.createElement("div");
+      newElement.innerHTML = "Event: " + event.data;
+      document.getElementById('events').appendChild(newElement);
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #302E2B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    width: min(80vw, 80vh);
+    height: min(80vw, 80vh);
+    border-radius: 10px;
+    background-color: #fff;
+    background-image: url(numbers.svg);
+    background-size: 100%;
+}

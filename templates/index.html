@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess - Play chess on the #1 site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="menu">
+        <img class="chess-logo" src="static/imgs/chess-logo.svg">
+        {% if 'username' in session %}
+            <div class="username-box">
+                <img src="{{ url_for('static', filename='imgs/user.svg')}}" alt=" logo de {{ session['username']}}" class="user-logo">
+                <span class="username">{{ session['username'] }}</span>
+            </div>
+           
+        {% else %}
+            <div class="nav-links">
+                <a href="{{ url_for('signup')}}" class="signup nav-button">Sign Up</a>
+                <a href="{{ url_for('login')}}" class="login nav-button button-green">Log In</a>
+            </div>
+        {% endif %}
+    </nav>
+    <main class="content">
+        <div class="container">
+            <img src="static/imgs/chess.png" alt="Chess game image" class="chess-game">
+            <div class="action">
+                <div class="description">
+                    <div>Play Chess</div>
+                    <div>Online</div>
+                    <div>on the #1 site!</div>
+                </div>
+                <ul class="game-stats">
+                    <li class="game-stats-item">
+                        <div class="today-games games-count">0</div>
+                        <div class="stat-label">Games today</div></li>
+                    <li class="game-stats-item">
+                        <div class="current-games games-count">0</div>
+                        <div class="stat-label">Playing now</div>
+                    </li>
+                </ul>
+                <div class="action-buttons">
+                    <a href="{{ url_for('game')}}"  class="online-game game-button game-button-green">
+                        <div class="game-button-image-container">
+                            <img src="{{ url_for('static', filename='imgs/online-game.svg')}}" class="game-button-image">
+                        </div>
+                        <div class="game-button-text" href="#">
+                            <div class="game-title">Play online</div>
+                            <div class="game-description">Play with womeone at your level</div>
+                        </div>
+                    </a>
+                    <a href="{{ url_for('friendly')}}" class="online-game game-button">
+                        <div class="game-button-image-container">
+                            <img src="{{ url_for('static', filename='imgs/friendly-game.svg')}}" class="game-button-image">
+                        </div>
+                        <div class="game-button-text">
+                            <div class="game-title">Play with a friend</div>
+                            <div class="game-description">Challenge a friend on a quick game</div>
+                        </div>
+                    </a>
+                    <a href="{{ url_for('computer')}}" class="computer-game game-button">
+                        <div class="game-button-image-container">
+                            <img src="{{ url_for('static', filename='imgs/computer-game.svg')}}" class="game-button-image">
+                        </div>
+                        <div class="game-button-text">
+                            <div class="game-title">Play computer</div>
+                            <div class="game-description">Play vs customizable training bots</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css')}}">
+</head>
+<body>
+    <div class="game">
+        <div class="player1"></div>
+        <div class="container" style="background-image: url('{{ url_for('static', filename='imgs/numbers.svg') }}');"></div>
+        <div class="player2"></div>
+    </div>
+    <div class="chat">
+        <div class="chat-head">Chat</div>
+        <div class="chat-messages">
+            <div class="message">
+                <span class="author">eddy: </span>
+                <span class="msg">Hello world</span>
+            </div>
+        </div>
+        <input type="text" class="chat-input">
+    </div>
+
+
+    <script src=" {{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
