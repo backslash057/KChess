@@ -93,7 +93,6 @@ def game():
 		data = request.get_json()
 
 		message = data.get('mesage')
-		print()	
 		return jsonify({"message": "message recu"})
 
 @app.route("/friendly")
@@ -103,3 +102,7 @@ def friendly():
 @app.route("/computer")
 def computer():
 	return ""
+
+
+if __name__ == "__main__":
+	app.run(debug=True)

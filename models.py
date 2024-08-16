@@ -9,20 +9,15 @@ class DbManager:
 			password = "root"
 		)
 
-		# self.dropTables()
 		self.init_tables()
-
-	def dropTables(self):
-		cursor = self.conn.cursor()
-
-		cursor.execute("DROP TABLE IF EXISTS users;")
-
-		self.conn.commit()
-		cursor.close()
 
 	def init_tables(self):
 		cursor = self.conn.cursor()
-		cursor.execute("CREATE TABLE IF NOT EXISTS users(id serial PRIMARY KEY, username VARCHAR(20), password VARCHAR(64));")
+		cursor.execute("""
+			CREATE TABLE IF NOT EXISTS users(id serial PRIMARY KEY,
+				username VARCHAR(20), password VARCHAR(64));
+			TRUNCATE TABLE users;
+			""")
 		self.conn.commit()
 		cursor.close()
 
@@ -46,8 +41,7 @@ class DbManager:
 
 		num_lines = cursor.rowcount
 		cursor.close()
-
-		print("Num lines:", num_lines)
+		
 		if num_lines == 0:
 			return False
 		return True
