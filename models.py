@@ -17,6 +17,8 @@ class DbManager:
 			CREATE TABLE IF NOT EXISTS users(id serial PRIMARY KEY,
 				username VARCHAR(20), password VARCHAR(64));
 			TRUNCATE TABLE users;
+			CREATE TABLE IF NOT EXISTS banned_passwords(pwd VARCHAR(64));
+			TRUNCATE TAbLE banned_passwords;
 			""")
 		self.conn.commit()
 		cursor.close()
