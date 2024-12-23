@@ -1,0 +1,31 @@
+we want to create a chess online platform where users can create accounts and play in different game modes
+
+a player can create an account using a username and a password
+
+-	when a user signs in using *Google*, we can store only his email and other credentials from google
+ 	he can create a password on his profile
+
+-	when a user signs in *normally*, we don't store his email, he can set an email later on his profile
+
+-	every player has a profile page with his credentials(email, username, Biography), stats(score), his old games history
+	and his social links (optional)
+
+-	A player can follow another player
+
+players can play in 3 modes:
+	against a friend (which he follows and is followed by)
+	against a bot (pretrained)
+	against another random player online
+	
+when a player wins a game in multiplayer, he wins some points
+
+there is a global leaderboard where players scores from multiplayer games are ranked
+this leaderboard can be filtered by countries (codingame like)
+
+**GLOBAL
+All the website pages should have the same menu and the same footer
+the footer wil contains the copyright and the author(s) social networks
+
+
+Note to myself:
+THOSE ARE ALL FUNCTIONALITIES, DON'T ADD OTHER ONES IF YOU ARE NOT DONE CODING THESE

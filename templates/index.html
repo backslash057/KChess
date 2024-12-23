@@ -18,8 +18,8 @@
            
         {% else %}
             <div class="nav-links">
-                <a href="{{ url_for('signup')}}" class="signup nav-button">Sign Up</a>
-                <a href="{{ url_for('login')}}" class="login nav-button button-green">Log In</a>
+                <a href="{{ url_for('auth.signup')}}" class="signup nav-button">Sign Up</a>
+                <a href="{{ url_for('auth.login')}}" class="login nav-button button-green">Log In</a>
             </div>
         {% endif %}
     </nav>
